@@ -2,6 +2,16 @@
   <app-page>
     <page-header>
       <template #title>Home</template>
+      <template #buttons-right>
+        <q-btn
+          :icon="$q.iconSet.colorPicker.palette"
+          flat
+          rounded
+          dense
+          unelevated
+          no-caps
+          @click="theme.toggleDark"></q-btn>
+      </template>
     </page-header>
     <page-body>
       <div class="q-pa-lg">
@@ -36,4 +46,8 @@
   </app-page>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useTheme } from '../../store/theme';
+
+const theme = useTheme();
+</script>

@@ -1,5 +1,5 @@
 <template>
-  <div class="page absolute-top fit bg-white shadow-4">
+  <q-page class="page absolute-top fit" :class="theme.genStyle()">
     <div
       v-touch-swipe.mouse.right="handleSwipeRight"
       class="page-nudger fit"
@@ -23,7 +23,7 @@
         </keep-alive>
       </transition>
     </router-view>
-  </div>
+  </q-page>
 </template>
 
 <script lang="ts" setup>
@@ -31,7 +31,9 @@ import { ref, onActivated, onDeactivated, computed } from 'vue';
 import { useQuasar } from 'quasar';
 import { useRouter } from 'vue-router';
 import { useNavigation } from '../store/navigation';
+import { useTheme } from '../store/theme';
 
+let theme = useTheme();
 let navigation = useNavigation();
 
 let emit = defineEmits(['pageActivated', 'pageDeactivated']);

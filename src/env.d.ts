@@ -1,3 +1,4 @@
+/// <reference types="quasar" />
 /// <reference types="vite/client" />
 
 declare module '*.vue' {

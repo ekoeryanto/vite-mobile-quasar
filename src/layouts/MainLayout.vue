@@ -7,10 +7,11 @@
       leave-active-class="animated slideOutDown">
       <q-footer
         v-if="details || !Object.keys($route.params).length"
-        bordered
-        class="bg-white text-primary">
+        :bordered="!$q.dark.isActive"
+        :elevated="$q.dark.isActive"
+        :class="theme.classes">
         <q-tabs
-          active-color="primary"
+          :active-color="$q.dark.isActive ? 'white' : 'primary'"
           indicator-color="transparent"
           class="text-grey"
           no-caps>
@@ -36,7 +37,8 @@
 
 <script setup lang="ts">
 import { useNavigation } from '../store/navigation';
-
+import { useTheme } from '../store/theme';
+let theme = useTheme();
 defineProps({
   details: Boolean,
 });

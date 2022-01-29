@@ -1,14 +1,12 @@
 <template>
   <router-view />
 </template>
-<script lang="ts">
-import { defineComponent } from 'vue';
+<script lang="ts" setup>
+import { onBeforeMount } from 'vue';
+import { useTheme } from './store/theme';
+const theme = useTheme();
 
-export default defineComponent({
-  name: 'App',
-  mounted() {
-    // TODO: Support dark mode
-    this.$q.dark.set(false);
-  },
+onBeforeMount(() => {
+  theme.initializeColor();
 });
 </script>

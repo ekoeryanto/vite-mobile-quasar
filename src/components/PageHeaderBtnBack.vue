@@ -1,11 +1,11 @@
 <template>
   <q-btn
     :icon="$q.iconSet.chevron.left"
-    color="primary"
     flat
     rounded
     dense
     no-caps
+    unelevated
     @click="$router.goBack" />
 </template>
 

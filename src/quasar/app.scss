@@ -12,6 +12,10 @@
 // Quasar
 @import 'quasar/src/css/index.sass';
 
+.bg-light {
+  @extend .bg-white 
+}
+
 // layout
 .q-footer {
   z-index: 3000;
